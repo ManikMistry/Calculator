@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="buttons">
+        <h2 id="value"></h2>
+        <span id="clr">clear</span>
+        <span id="devide">/</span>
+        <span id="multiply">*</span>
+        <span id="block7">7</span>
+        <span id="block8">8</span>
+        <span id="block9">9</span>
+        <span id="minus">-</span>
+        <span id="block4">4</span>
+        <span id="block5">5</span>
+        <span id="block6">6</span>
+        <span id="plus">+</span>
+        <span id="block1">1</span>
+        <span id="block2">2</span>
+        <span id="block3">3</span>
+        <span id="block0">0</span>
+        <span id="dot">.</span>
+        <span id="ans">=</span>
+        <span id="ans">#GG</span>
+      </div>
+    </div>
+    <script>
+      let buttons = document.querySelector(".buttons");
+      let btn = document.querySelectorAll("span");
+      let value = document.getElementById("value");
+
+      for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function () {
+          if (this.innerHTML == "=") {
+            value.innerHTML = eval(value.innerHTML);
+          } else {
+            if (this.innerHTML == "clear") {
+              value.innerHTML = "";
+            } else {
+              value.innerHTML += this.innerHTML;
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
